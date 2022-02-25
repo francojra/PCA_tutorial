@@ -50,3 +50,39 @@
 # subjacente. Note-se que o reenquadramento de um conjunto de dados relativos a um conjunto de auto-valores e auto-vectores 
 # não implica a alteração dos dados em si, apenas se está a olhar para eles de um ângulo diferente, o que deveria 
 # representar melhor os dados.
+
+# Sobre o conjunto de dados ----------------------------------------------------------------------------------------------------------------
+
+# In this section, you will try a PCA using a simple and easy to understand dataset. You will use the mtcars dataset, 
+# which is built into R. This dataset consists of data on 32 models of car, taken from an American motoring magazine 
+# (1974 Motor Trend magazine). For each car, you have 11 features, expressed in varying units (US units).
+
+# Prática PCA - Computar os Componentes Principais ------------------------------------------------------------------------------------------------------------------------------
+
+# Como a PCA funciona melhor com dados numéricos, excluem-se as duas variáveis categóricas (vs e am). Fica com uma 
+# matriz de 9 colunas e 32 linhas, que passa para a função prcomp(), atribuindo a sua saída ao mtcars.pca. 
+# Também definirá dois argumentos, centro e escala, para ser VERDADEIRO. Depois pode dar uma espreitadela ao seu 
+# objecto PCA com sumário().
+
+mtcars.pca <- prcomp(mtcars[,c(1:7,10,11)], center = TRUE,scale. = TRUE)
+
+summary(mtcars.pca)
+
+# Obtém 9 componentes principais, aos quais chama PC1-9. Cada um deles explica uma percentagem da variação total do 
+# conjunto de dados. Isto é, o que quer dizer: PC1 explica 63% da variação total, o que significa que quase dois 
+# terços da informação no conjunto de dados (9 variáveis) podem ser encapsulados por apenas um Componente Principal. 
+# PC2 explica 23% da variância. Assim, conhecendo a posição de uma amostra em relação a apenas PC1 e PC2, é possível 
+# obter uma visão muito precisa sobre a sua posição em relação a outras amostras, pois apenas PC1 e PC2 podem 
+# explicar 86% da variância.
+
+str(mtcars.pca)
+
+# O objecto PCA contém as seguintes informações
+
+# The center point ($center), scaling ($scale), standard deviation(sdev) of each principal component
+
+# The relationship (correlation or anticorrelation, etc) between the initial variables and the principal components
+# ($rotation)
+
+# The values of each sample in terms of the principal components ($x)
+
