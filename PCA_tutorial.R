@@ -77,12 +77,11 @@ summary(mtcars.pca)
 
 str(mtcars.pca)
 
-# O objecto PCA contém as seguintes informações
+# O objecto PCA contém as seguintes informações:
 
-# The center point ($center), scaling ($scale), standard deviation(sdev) of each principal component
+## O ponto central ($center), escala ($scale), desvio padrão (sdev) de cada componente principal
 
-# The relationship (correlation or anticorrelation, etc) between the initial variables and the principal components
-# ($rotation)
+## A relação (correlação ou anticorrelação, etc.) entre as variáveis iniciais e os componentes principais ($rotation)
 
-# The values of each sample in terms of the principal components ($x)
+## Os valores de cada amostra em termos dos componentes principais ($x)
 
