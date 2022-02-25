@@ -37,6 +37,16 @@
 # Tal como muitas coisas na vida, os auto-vectores, e os auto-valores vêm em pares: cada auto-vector tem 
 # um auto-valor correspondente. Simplificando, um autovector é uma direcção, tal como "vertical" ou "45 graus", 
 # enquanto que um auto-valor é um número que lhe diz quanta variação existe nos dados nessa direcção. 
-# O autovector com o valor próprio mais elevado é, portanto, o primeiro componente principal.
+# O autovector com o auto-valor mais elevado é, portanto, o primeiro componente principal.
 
+# Então espere, há possivelmente mais valores próprios e vectores próprios a serem encontrados num conjunto de dados?
 
+# Isso é correcto! O número de auto-valores e auto-vectores que saem é igual ao número de dimensões que o conjunto 
+# de dados tem. No exemplo que viu acima, existiam 2 variáveis, pelo que o conjunto de dados era bidimensional. 
+# Isso significa que existem dois autovectores e auto-valores. Da mesma forma, encontraríamos três pares num 
+# conjunto de dados tridimensionais.
+
+# Podemos reenquadrar um conjunto de dados em termos destes auto-vectores e auto-valores sem alterar a informação 
+# subjacente. Note-se que o reenquadramento de um conjunto de dados relativos a um conjunto de auto-valores e auto-vectores 
+# não implica a alteração dos dados em si, apenas se está a olhar para eles de um ângulo diferente, o que deveria 
+# representar melhor os dados.
