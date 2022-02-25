@@ -31,3 +31,12 @@
 # complexidade do seu conjunto de dados com apenas alguns componentes principais. À medida que adiciona mais 
 # componentes principais, vai resumindo cada vez mais o conjunto de dados original. A adição de componentes 
 # adicionais torna a sua estimativa do conjunto de dados total mais precisa, mas também mais pesada.
+
+# Eigenvalues and Eigenvectors -------------------------------------------------------------------------------------------------------------
+
+# Tal como muitas coisas na vida, os auto-vectores, e os auto-valores vêm em pares: cada auto-vector tem 
+# um auto-valor correspondente. Simplificando, um autovector é uma direcção, tal como "vertical" ou "45 graus", 
+# enquanto que um auto-valor é um número que lhe diz quanta variação existe nos dados nessa direcção. 
+# O autovector com o valor próprio mais elevado é, portanto, o primeiro componente principal.
+
+
