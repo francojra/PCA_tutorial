@@ -99,7 +99,7 @@ str(mtcars.pca)
 # principal.
 
 library(devtools)
-install_github("vqv/ggbiplot")
+#install_github("vqv/ggbiplot")
 library(ggbiplot)
 
 ggbiplot(mtcars.pca)
@@ -128,7 +128,8 @@ ggbiplot(mtcars.pca, labels = rownames(mtcars))
 # lista para essas informações e passa para o argumento groups do ggbiplot. Você também 
 # definirá o argumento da elipse como TRUE, que desenhará uma elipse ao redor de cada grupo.
 
-mtcars.country <- c(rep("Japan", 3), rep("US",4), rep("Europe", 7),rep("US",3), "Europe", rep("Japan", 3), rep("US",4), rep("Europe", 3), "US", rep("Europe", 3))
+mtcars.country <- c(rep("Japan", 3), rep("US",4), rep("Europe", 7),rep("US",3), "Europe", 
+                    rep("Japan", 3), rep("US",4), rep("Europe", 3), "US", rep("Europe", 3))
 
 ggbiplot(mtcars.pca,ellipse = TRUE,  labels = rownames(mtcars), groups = mtcars.country)
 
@@ -137,4 +138,23 @@ ggbiplot(mtcars.pca,ellipse = TRUE,  labels = rownames(mtcars), groups = mtcars.
 # altos valores para cyl, disp e wt. Os carros japoneses, por outro lado, são caracterizados 
 # por alto mpg. Os carros europeus estão um pouco no meio e menos agrupados do que os dois 
 # grupos.
+
+# Claro, você tem muitos componentes principais disponíveis, cada um mapeando de forma 
+# diferente para as variáveis originais. Você também pode pedir ao ggbiplot para plotar 
+# esses outros componentes, usando o argumento de opções.
+
+# Vamos dar uma olhada no PC3 e PC4:
+
+ggbiplot(mtcars.pca, ellipse = TRUE, choices = c(3,4), labels = rownames(mtcars), 
+         groups = mtcars.country)
+
+# Você não vê muito aqui, mas isso não é muito surpreendente. PC3 e PC4 explicam porcentagens 
+# muito pequenas da variação total, então seria surpreendente se você descobrisse que eles 
+# eram muito informativos e separavam os grupos ou revelavam padrões aparentes.
+
+# Vamos recapitular: tendo realizado um PCA usando o conjunto de dados mtcars, podemos ver 
+# uma clara separação entre carros americanos e japoneses ao longo de um componente principal 
+# que está intimamente relacionado a cyl, disp, wt e mpg. Isso nos fornece algumas pistas 
+# para análises futuras; se tentássemos construir um modelo de classificação para identificar 
+# a origem de um carro, essas variáveis poderiam ser úteis.
 
