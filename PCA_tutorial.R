@@ -64,8 +64,11 @@
 # Também definirá dois argumentos, centro e escala, para ser VERDADEIRO. Depois pode dar uma espreitadela ao seu 
 # objecto PCA com sumário().
 
-mtcars.pca <- prcomp(mtcars[,c(1:7,10,11)], center = TRUE,scale. = TRUE)
+mtcars.pca <- prcomp(mtcars[,c(1:7,10,11)], center = TRUE, scale. = TRUE)
 
+mtcars
+mtcars[,c(1:7,10,11)]
+       
 summary(mtcars.pca)
 
 # Obtém 9 componentes principais, aos quais chama PC1-9. Cada um deles explica uma percentagem da variação total do 
@@ -100,3 +103,20 @@ install_github("vqv/ggbiplot")
 library(ggbiplot)
 
 ggbiplot(mtcars.pca)
+
+# Os eixos são vistos como setas originadas do ponto central. Aqui, você vê que as variáveis
+# hp, cyl e disp contribuem para PC1, com valores mais altos nessas variáveis movendo as 
+# amostras para a direita neste gráfico. Isso permite que você veja como os pontos de dados 
+# se relacionam com os eixos, mas não é muito informativo sem saber qual ponto corresponde a 
+# qual amostra (carro).
+
+# Você fornecerá um argumento para ggbiplot: vamos fornecer os nomes das linhas de mtcars 
+# como rótulos. Isso nomeará cada ponto com o nome do carro em questão:
+
+ggbiplot(mtcars.pca, labels = rownames(mtcars))
+
+# Agora você pode ver quais carros são semelhantes entre si. Por exemplo, o Maserati Bora, 
+# o Ferrari Dino e o Ford Pantera L agrupam-se no topo. Isso faz sentido, pois todos são 
+# carros esportivos.
+
+# De que outra forma você pode tentar entender melhor seus dados?
