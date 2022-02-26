@@ -85,3 +85,18 @@ str(mtcars.pca)
 
 ## Os valores de cada amostra em termos dos componentes principais ($x)
 
+# Gráfico PCA ------------------------------------------------------------------------------------------------------------------------------
+
+# Agora você fará um biplot, que inclui tanto a posição de cada amostra em termos de PC1 como de 
+# PC2 e também lhe mostrará como as variáveis iniciais se mapeiam para isto. Irá utilizar 
+# o pacote ggbiplot, que oferece uma função de fácil utilização e bonita para traçar 
+# biplots. Um biplot é um tipo de gráfico que lhe permitirá visualizar como as amostras 
+# se relacionam umas com as outras no nosso PCA (que amostras são semelhantes e que são 
+# diferentes) e revelará simultaneamente como cada variável contribui para cada componente 
+# principal.
+
+library(devtools)
+install_github("vqv/ggbiplot")
+library(ggbiplot)
+
+ggbiplot(mtcars.pca)
