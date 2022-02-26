@@ -120,3 +120,21 @@ ggbiplot(mtcars.pca, labels = rownames(mtcars))
 # carros esportivos.
 
 # De que outra forma você pode tentar entender melhor seus dados?
+
+# Interpretando os resultados --------------------------------------------------------------------------------------------------------------
+
+# Talvez se você olhar para a origem de cada um dos carros. Você os colocará em uma das três 
+# categorias (categorias?), uma para carros americanos, japoneses e europeus. Você faz uma 
+# lista para essas informações e passa para o argumento groups do ggbiplot. Você também 
+# definirá o argumento da elipse como TRUE, que desenhará uma elipse ao redor de cada grupo.
+
+mtcars.country <- c(rep("Japan", 3), rep("US",4), rep("Europe", 7),rep("US",3), "Europe", rep("Japan", 3), rep("US",4), rep("Europe", 3), "US", rep("Europe", 3))
+
+ggbiplot(mtcars.pca,ellipse = TRUE,  labels = rownames(mtcars), groups = mtcars.country)
+
+# Agora você vê algo interessante: os carros americanos formam um agrupamento distinto à 
+# direita. Olhando para os eixos, você vê que os carros americanos são caracterizados por 
+# altos valores para cyl, disp e wt. Os carros japoneses, por outro lado, são caracterizados 
+# por alto mpg. Os carros europeus estão um pouco no meio e menos agrupados do que os dois 
+# grupos.
+
